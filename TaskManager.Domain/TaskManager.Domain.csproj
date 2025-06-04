@@ -1,9 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <Folder Include="Common/" />
-    <Folder Include="Tasks/" />
-    <Folder Include="Users/" />
+    <Folder Include="Exceptions/" />
+    <Folder Include="ValueObjects/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
   </ItemGroup>
 
 </Project>
