@@ -7,9 +7,9 @@ public record Status
 {
     public StatusTask StatusTask { get; set; }
 
-    public Status(StatusTask statusTask)
+    public Status()
     {
-        StatusTask = statusTask;
+        StatusTask = StatusTask.Backlog;
     }
 
     public Status ChangeStatus(StatusTask newStatus)
