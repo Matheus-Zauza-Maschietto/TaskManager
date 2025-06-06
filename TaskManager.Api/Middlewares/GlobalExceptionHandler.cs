@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Diagnostics;
 using System;
 using System.Net;
-using TaskManager.Application.Mediator;
+using TaskManager.Application.Common.Mediator;
 
 namespace TaskManager.Api.Middlewares;
 

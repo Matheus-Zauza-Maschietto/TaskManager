@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
-using TaskManager.Application.Shared.Services.Contracts;
+using TaskManager.Application.Common.Services.Contracts;
 using TaskManager.Domain.Aggregates;
-using TaskManager.Domain.Contracts;
+using TaskManager.Domain.Contracts.Repositories;
 
-namespace TaskManager.Application.Shared.Services;
+namespace TaskManager.Application.Common.Services;
 
 public class UserService(
     [FromServices]IRequestSessionService RequestSessionService,

@@ -5,7 +5,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="PostgreSQL/" />
+    <Folder Include="PostgreSQL/Repositories/" />
   </ItemGroup>
 
 </Project>

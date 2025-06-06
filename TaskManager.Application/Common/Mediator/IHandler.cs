@@ -1,6 +1,6 @@
 using System;
 
-namespace TaskManager.Application.Mediator;
+namespace TaskManager.Application.Common.Mediator;
 
 public interface IHandler<TRequest, TResponse>
 {

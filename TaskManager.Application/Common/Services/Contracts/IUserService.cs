@@ -1,7 +1,7 @@
 using System;
 using TaskManager.Domain.Aggregates;
 
-namespace TaskManager.Application.Shared.Services.Contracts;
+namespace TaskManager.Application.Common.Services.Contracts;
 
 public interface IUserService
 {

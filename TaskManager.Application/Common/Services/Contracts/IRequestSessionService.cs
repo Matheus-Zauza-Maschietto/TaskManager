@@ -1,6 +1,6 @@
 using System;
 
-namespace TaskManager.Application.Shared.Services.Contracts;
+namespace TaskManager.Application.Common.Services.Contracts;
 
 public interface IRequestSessionService
 {

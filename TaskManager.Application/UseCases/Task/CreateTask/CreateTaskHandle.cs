@@ -1,17 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using TaskManager.Application.Mediator;
-using TaskManager.Application.Shared.DTOs;
-using TaskManager.Application.Shared.Services.Contracts;
+using TaskManager.Application.Common.Mediator;
+using TaskManager.Application.Common.DTOs;
+using TaskManager.Application.Common.Services.Contracts;
 using TaskManager.Domain.Aggregates;
-using TaskManager.Domain.Contracts;
+using TaskManager.Domain.Contracts.Repositories;
 using Core = TaskManager.Domain.Entities;
 
 namespace TaskManager.Application.UseCases.Task.CreateTask;
 
 public class CreateTaskHandle(
     [FromServices]ITaskRepository TaskRepository,
+    [FromServices]IUnitOfWork UnitOfWork,
     [FromServices]IUserService UserService
 ) : IHandler<CreateTaskRequest, TaskDTO>
 {
@@ -23,8 +24,8 @@ public class CreateTaskHandle(
 
         Core.Task createdTask = await TaskRepository.CreateTaskAsync(task);
 
-        await TaskRepository.SaveAsync();
+        await UnitOfWork.SaveChangesAsync();
 
-        return Result<TaskDTO>.Success<TaskDTO>(TaskDTO.FromEntity(createdTask));
+        return Result.Success(TaskDTO.FromEntity(createdTask));
     }
 }

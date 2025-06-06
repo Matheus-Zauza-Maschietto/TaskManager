@@ -1,9 +1,9 @@
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TaskManager.Application.Shared.Services.Contracts;
+using TaskManager.Application.Common.Services.Contracts;
 
-namespace TaskManager.Application.Shared.Services;
+namespace TaskManager.Application.Common.Services;
 
 public class RequestSessionService(
     [FromServices]IHttpContextAccessor HttpContextAccessor

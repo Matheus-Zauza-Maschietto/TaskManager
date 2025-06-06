@@ -1,7 +1,7 @@
 using System;
 using Core = TaskManager.Domain.Entities;
 
-namespace TaskManager.Application.Shared.DTOs;
+namespace TaskManager.Application.Common.DTOs;
 
 public class TaskDTO
 {

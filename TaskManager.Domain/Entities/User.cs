@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using System;
+using System.Runtime.ConstrainedExecution;
+using Core = TaskManager.Domain.Entities;
 
 namespace TaskManager.Domain.Aggregates;
-
+        
 public class User : IdentityUser
 {
-
+    public ICollection<Core.Task> Tasks { get; set; } = [];
 }

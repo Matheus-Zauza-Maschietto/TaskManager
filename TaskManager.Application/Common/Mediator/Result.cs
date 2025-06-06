@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TaskManager.Application.Mediator;
+namespace TaskManager.Application.Common.Mediator;
 
 public abstract record class Result
 {

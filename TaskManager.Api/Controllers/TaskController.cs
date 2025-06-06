@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TaskManager.Application.Mediator;
-using TaskManager.Application.Shared.DTOs;
+using TaskManager.Application.Common.Mediator;
+using TaskManager.Application.Common.DTOs;
 using TaskManager.Application.UseCases.Task.CreateTask;
 
 namespace TaskManager.Api.Controllers;
