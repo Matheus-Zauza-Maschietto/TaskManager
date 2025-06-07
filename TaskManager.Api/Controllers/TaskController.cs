@@ -42,7 +42,7 @@ public class TaskController : ControllerBase
         return result.IsSucess ? Ok(result) : BadRequest(result);
     }
 
-    [HttpPatch("{TaskId}")]
+    [HttpDelete("{TaskId}")]
     public async Task<IActionResult> DeleteTaskById(
         [FromServices] IRequesterHandler<DeleteTaskRequest> handler,
         [FromRoute] DeleteTaskRequest request)

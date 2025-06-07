@@ -28,6 +28,8 @@ app.UseHttpsRedirection();
 app.MapOpenApi();
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseAuthorization();
+app.MapControllers();
 app.UseExceptionHandler();
 
 app.Run();
