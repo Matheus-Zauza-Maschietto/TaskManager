@@ -5,14 +5,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases/Task/DeleteTask/" />
-    <Folder Include="UseCases/Task/GetAllTask/" />
-    <Folder Include="UseCases/Task/UpdateTask/" />
-    <Folder Include="UseCases/User/" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <PackageReference Include="Microsoft.AspNetCore.Http" />
   </ItemGroup>
 

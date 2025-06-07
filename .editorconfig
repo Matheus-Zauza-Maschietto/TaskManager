@@ -281,6 +281,7 @@ dotnet_style_readonly_field = true:suggestion
 dotnet_diagnostic.CA2007.severity = none
 dotnet_diagnostic.CA1031.severity = suggestion
 dotnet_diagnostic.CA2227.severity = silent
+dotnet_diagnostic.CA1305.severity = silent
 dotnet_style_operator_placement_when_wrapping = beginning_of_line
 tab_width = 4
 indent_size = 4

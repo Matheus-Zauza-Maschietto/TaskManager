@@ -18,6 +18,9 @@ builder.Services.AddValidatorsFromAssembly(Assembly.Load("TaskManager.Applicatio
 builder.Services.AddProblemDetails();
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
+builder.Services.AddIdentityUserConfiguration();
+builder.Services.AddAuthenticationConfiguration(builder.Configuration);
+builder.Services.AddAuthorizationConfiguration(builder.Configuration);
 
 var app = builder.Build();
 

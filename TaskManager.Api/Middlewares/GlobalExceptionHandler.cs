@@ -12,7 +12,7 @@ public class GlobalExceptionHandler : IExceptionHandler
         Exception exception,
         CancellationToken cancellationToken)
     {
-        Result<object> result = Result.Failure<object>(exception.Message);
+        Result result = Result.Failure(exception.Message);
         httpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
         await httpContext.Response.WriteAsJsonAsync(result, cancellationToken);
         return true;

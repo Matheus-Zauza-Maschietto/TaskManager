@@ -7,8 +7,8 @@ using TaskManager.Domain.Contracts.Repositories;
 namespace TaskManager.Application.Common.Services;
 
 public class UserService(
-    [FromServices]IRequestSessionService RequestSessionService,
-    [FromServices]IUserRepository UserRepository
+    [FromServices] IRequestSessionService RequestSessionService,
+    [FromServices] IUserRepository UserRepository
 ) : IUserService
 {
     public async Task<User> GetRequestUser()

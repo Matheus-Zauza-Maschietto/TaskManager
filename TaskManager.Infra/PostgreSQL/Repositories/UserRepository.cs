@@ -20,4 +20,9 @@ public class UserRepository : IUserRepository
     {
         return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
+
+    public async Task<Domain.Aggregates.User> CreateUser(Domain.Aggregates.User user)
+    {
+        return _context.Users.Add(user).Entity;
+    }
 }
