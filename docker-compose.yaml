@@ -1,4 +1,3 @@
-version: "latest"
 services:
   db:
     container_name: "taskmanager-postgres"
@@ -10,16 +9,16 @@ services:
       - POSTGRES_PASSWORD=Senha123!
     networks:
       - "taskmanager"
-  app:
-    depends_on: 
-      - db
-    container_name: "taskmanagerAPI"
-    build: ./dockerfile
-    image: "./"
-    ports:
-      - 5090:5090
-    networks:
-      - "taskmanager"
+  # app:
+  #   depends_on: 
+  #     - db
+  #   container_name: "taskmanagerAPI"
+  #   build: ./dockerfile
+  #   image: "./"
+  #   ports:
+  #     - 5090:5090
+  #   networks:
+  #     - "taskmanager"
 
 networks:
   taskmanager:

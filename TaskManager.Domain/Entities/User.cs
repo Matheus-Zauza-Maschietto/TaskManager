@@ -8,12 +8,16 @@ namespace TaskManager.Domain.Aggregates;
 public class User : IdentityUser
 {
     public ICollection<Core.Task> Tasks { get; set; } = [];
-    
+
     public User(string email, string firstName, string lastName)
         : base(email)
     {
         Email = email;
-        this.UserName = firstName + " " + lastName;
+        this.UserName = firstName.Replace(" ", "-") + "-" + lastName.Replace(" ", "-");
     }
 
+    public User()
+    {
+        
+    }
 }

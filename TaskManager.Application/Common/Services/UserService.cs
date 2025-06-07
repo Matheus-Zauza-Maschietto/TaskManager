@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using TaskManager.Application.Common.Services.Contracts;
@@ -8,13 +9,13 @@ namespace TaskManager.Application.Common.Services;
 
 public class UserService(
     [FromServices] IRequestSessionService RequestSessionService,
-    [FromServices] IUserRepository UserRepository
+    [FromServices] UserManager<User> UserManager
 ) : IUserService
 {
     public async Task<User> GetRequestUser()
     {
         string? userEmail = RequestSessionService.GetUserEmail();
         ArgumentNullException.ThrowIfNull(userEmail, nameof(userEmail));
-        return await UserRepository.GetUserByEmail(userEmail) ?? throw new KeyNotFoundException("User not found");
+        return await UserManager.FindByEmailAsync(userEmail) ?? throw new KeyNotFoundException("User not found");
     }
 }

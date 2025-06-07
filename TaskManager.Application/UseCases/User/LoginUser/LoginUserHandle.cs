@@ -9,7 +9,6 @@ using Core = TaskManager.Domain.Aggregates;
 namespace TaskManager.Application.UseCases.User.LoginUser;
 
 public class LoginUserHandle(
-    IUserRepository UserRepository,
     UserManager<Core.User> UserManager,
     IJWTService JWTService
 ) : IHandler<LoginUserRequest, LoginUserResponse>
@@ -17,7 +16,7 @@ public class LoginUserHandle(
 
     public async Task<Result> Handle(LoginUserRequest request)
     {
-        Core.User? user = await UserRepository.GetUserByEmail(request.Email);
+        Core.User? user = await UserManager.FindByEmailAsync(request.Email);
         if (user is null)
         {
             return Result.Failure("User with this email does not exist.");

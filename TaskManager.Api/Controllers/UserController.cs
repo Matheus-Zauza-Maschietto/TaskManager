@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TaskManager.Application.Common.Mediator;
@@ -6,6 +7,7 @@ using TaskManager.Application.UseCases.User.LoginUser;
 
 namespace TaskManager.Api.Controllers;
 
+[AllowAnonymous]
 [Route("api/[controller]")]
 [ApiController]
 public class UserController : ControllerBase

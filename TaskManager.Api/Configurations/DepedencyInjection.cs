@@ -8,6 +8,9 @@ using TaskManager.Domain.Contracts.Repositories;
 using TaskManager.Infra.PostgreSQL.Repositories;
 using TaskManager.Application.UseCases.Task.GetAllTask;
 using TaskManager.Application.UseCases.Task.DeleteTask;
+using TaskManager.Application.UseCases.User.CreateUser;
+using TaskManager.Application.UseCases.Task.UpdateTask;
+using TaskManager.Application.UseCases.User.LoginUser;
 
 namespace TaskManager.Api.Configurations;
 
@@ -18,7 +21,6 @@ public static class DepedencyInjection
         services.AddScoped<ITaskRepository, TaskRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IUserService, UserService>();
-        services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IRequestSessionService, RequestSessionService>();
         services.AddScoped<ITaskService, TaskService>();
         services.AddScoped<IJWTService, JWTService>();
@@ -30,7 +32,11 @@ public static class DepedencyInjection
     {
         services.AddScoped<IHandler<CreateTaskRequest, TaskDTO>, CreateTaskHandle>();
         services.AddScoped<IResponserHandler<List<TaskDTO>>, GetAllTaskHandle>();
+        services.AddScoped<IHandler<UpdateTaskRequest, TaskDTO>, UpdateTaskHandle>();
         services.AddScoped<IRequesterHandler<DeleteTaskRequest>, DeleteTaskHandle>();
+        services.AddScoped<IHandler<CreateUserRequest, CreateUserResponse>, CreateUserHandle>();
+        services.AddScoped<IHandler<LoginUserRequest, LoginUserResponse>, LoginUserHandle>();
+
         return services;
     }
 }

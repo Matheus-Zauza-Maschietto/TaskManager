@@ -271,6 +271,9 @@ dotnet_diagnostic.CA1819.severity = silent
 # CA1056: As propriedades do tipo URI não devem ser cadeias de caracteres
 dotnet_diagnostic.CA1056.severity = silent
 
+# CA1307: Specify StringComparison for clarity
+dotnet_diagnostic.CA1307.severity = silent
+
 [*.{cs,vb}]
 end_of_line = crlf
 dotnet_style_qualification_for_field = false:silent
