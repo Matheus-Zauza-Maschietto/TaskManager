@@ -274,6 +274,9 @@ dotnet_diagnostic.CA1056.severity = silent
 # CA1307: Specify StringComparison for clarity
 dotnet_diagnostic.CA1307.severity = silent
 
+# CA1051: Do not declare visible instance fields
+dotnet_diagnostic.CA1051.severity = silent
+
 [*.{cs,vb}]
 end_of_line = crlf
 dotnet_style_qualification_for_field = false:silent

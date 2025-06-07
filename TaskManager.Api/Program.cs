@@ -10,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerUIConfiguration();
 builder.Services.AddDependencyInjection();
 builder.Services.AddMediator();
 builder.Services.AddHttpContextAccessor();

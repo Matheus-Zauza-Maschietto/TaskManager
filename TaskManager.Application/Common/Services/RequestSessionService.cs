@@ -1,4 +1,5 @@
 using System;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TaskManager.Application.Common.Services.Contracts;
@@ -11,11 +12,11 @@ public class RequestSessionService(
 {
     public string GetUserEmail()
     {
-        return HttpContextAccessor.HttpContext?.User?.FindFirst("email")?.Value ?? string.Empty;
+        return HttpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.Email)?.Value ?? string.Empty;
     }
     
     public string GetUserId()
     {
-        return HttpContextAccessor.HttpContext?.User?.FindFirst("id")?.Value ?? string.Empty;
+        return HttpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
     }
 }

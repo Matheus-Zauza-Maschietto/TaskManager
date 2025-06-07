@@ -32,11 +32,13 @@ public class TaskController : ControllerBase
         return result.IsSucess ? Ok(result) : BadRequest(result);
     }
 
-    [HttpPatch("{TaskId}")]
+    [HttpPatch("{taskId}")]
     public async Task<IActionResult> UpdateTaskById(
         [FromServices] IHandler<UpdateTaskRequest, TaskDTO> handler,
-        [FromBody] UpdateTaskRequest request)
+        [FromBody] UpdateTaskRequest request,
+        [FromRoute] int taskId)
     {
+        request.TaskId = taskId;
         var result = await handler.Handle(request);
 
         return result.IsSucess ? Ok(result) : BadRequest(result);

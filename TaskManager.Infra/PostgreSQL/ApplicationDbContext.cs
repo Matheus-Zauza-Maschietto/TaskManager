@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Security.Claims;
 using TaskManager.Domain.Aggregates;
 using Core = TaskManager.Domain.Entities;
 
@@ -63,7 +64,7 @@ public class ApplicationDbContext : IdentityDbContext<User>
     
     private string GetSessionUserId()
     {
-        return _httpContextAccessor.HttpContext?.User?.FindFirst("id")?.Value ?? string.Empty;
+        return _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
     }
 
 }

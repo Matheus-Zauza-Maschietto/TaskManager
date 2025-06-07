@@ -28,7 +28,7 @@ public class TaskDTO
             task.Id,
             task.Title,
             task.Description,
-            task.User.Id.ToString(),
+            task.UserId.ToString(),
             task.CreatedAt,
             task.UpdatedAt
         );
