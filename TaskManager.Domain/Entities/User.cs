@@ -16,7 +16,7 @@ public class User : IdentityUser
         this.UserName = firstName.Replace(" ", "-") + "-" + lastName.Replace(" ", "-");
     }
 
-    public User()
+    public User() : base()
     {
         
     }

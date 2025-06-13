@@ -9,13 +9,15 @@ namespace TaskManager.Domain.Entities;
 public sealed class Task : BaseEntity
 {
     public string UserId { get; set; }
-    public User User { get; private set; }
+    public User User { get; private set; } 
     public string Title { get; private set; }
     public string Description { get; private set; }
     public Status Status { get; private set; }
 
-    public Task(string title, string description)
+    public Task(string title, string description, User user)
     {
+        UserId = user.Id;
+        User = user;
         Title = title;
         Description = description;
         Status = new Status();
